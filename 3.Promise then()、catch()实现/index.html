@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <script src="./promise.js"></script> -->
+    <script>
+      const p = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("ok");
+        }, 3000);
+        // reject("err");
+        // throw "error";
+      });
+      console.log(p, "ppp");
+      const then1 = p.then((res) => {
+        console.log(res);
+        return 111;
+      });
+      const then2 = then1.then((res) => {
+        throw 123;
+      });
+      const then3 = then2.catch((err) => {
+        console.log(err);
+      });
+      console.log(then3, "p222");
+    </script>
+  </body>
+</html>
