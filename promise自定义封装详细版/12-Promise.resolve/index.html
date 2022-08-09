@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promise.resolve</title>
+</head>
+
+<body>
+  <script src="./promise.js"></script>
+  <script>
+    const p = new Promise((resolve, reject) => {
+      // resolve(666)
+      reject(888)
+    })
+    const p1 = Promise.resolve(p);
+
+    p1.then(res => console.log(res, 123))
+    console.log(p1);
+  </script>
+</body>
+
+</html>
